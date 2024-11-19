@@ -14,7 +14,7 @@ make all
 ## Notes
 - Makefile does install, test (pytest), format (black), lint (pylint)
 - Github actions automatically runs everything from the Makefile on push. See `.github/workflows/testing-ci.yml`.
-- [Timecode: 32:32] Ran into issues using old versions of actions/checkout and actions/setup-python that depend on old versions of Node.js. Had to update to the latest version to build properly. Actions are github repos, you can see the versions on the Release section, e.g. [actions/setup-python](https://github.com/actions/setup-python)
+- `32:32` Ran into issues using old versions of actions/checkout and actions/setup-python that depend on old versions of Node.js. Had to update to the latest version to build properly. Actions are github repos, you can see the versions on the Release section, e.g. [actions/setup-python](https://github.com/actions/setup-python)
 
 Error:
 ```
@@ -26,4 +26,5 @@ The following actions uses node12 which is deprecated and will be forced to run 
 ```
 
 - Switching to using `requirements.txt` instead of `pyproject.toml` and poetry so that Github Actiosn work. Will circle back around and learn how poetry works with github actions.
-- Add flag to pytest command in makefile so that coverage get's analyzed (see [pytest-cov usage](https://pypi.org/project/pytest-cov/#usage))
+- `34:03` Add flag to pytest command in makefile so that coverage get's analyzed (see [pytest-cov usage](https://pypi.org/project/pytest-cov/#usage))
+- `39:20` Running matrix test with different python as described in [Github Actions docs](https://docs.github.com/en/actions/use-cases-and-examples/building-and-testing/building-and-testing-python#using-multiple-python-versions)
