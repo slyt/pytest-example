@@ -28,3 +28,4 @@ The following actions uses node12 which is deprecated and will be forced to run 
 - Switching to using `requirements.txt` instead of `pyproject.toml` and poetry so that Github Actiosn work. Will circle back around and learn how poetry works with github actions.
 - `34:03` Add flag to pytest command in makefile so that coverage get's analyzed (see [pytest-cov usage](https://pypi.org/project/pytest-cov/#usage))
 - `39:20` Running matrix test with different python as described in [Github Actions docs](https://docs.github.com/en/actions/use-cases-and-examples/building-and-testing/building-and-testing-python#using-multiple-python-versions)
+- `43:26` Moved `test_hollo.py` to the `tests` directory, but then `make test` failed because I was calling pytest directly, need to call pytest with `python -m pytest tests` so that hello.py is added to the Python path. Alternatively, we could create `pytest.ini` or `pyproject.toml` and define `pythonpath = .` appropriately.
