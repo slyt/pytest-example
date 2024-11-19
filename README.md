@@ -13,7 +13,7 @@ make all
 
 ## Notes
 - Makefile does install, test (pytest), format (black), lint (pylint)
-- Github actions automatically runs everything from the Makefile on push. See `.github/workflows/testing-ci.yml`.
+- Github Actions automatically runs everything from the Makefile on push. See `.github/workflows/testing-ci.yml`.
 - `32:32` Ran into issues using old versions of actions/checkout and actions/setup-python that depend on old versions of Node.js. Had to update to the latest version to build properly. Actions are github repos, you can see the versions on the Release section, e.g. [actions/setup-python](https://github.com/actions/setup-python)
 
 Error:
@@ -39,3 +39,8 @@ from greeting import my_name
 
 This is because python only imports once per session and subsequent imports are ignored in order to improve performance and preventing conflicts from loading modules multiple times.
 
+- `50:00` Cloud providers have "CloudShells" where you can clone a repo into a brand new shell to see if things work in a cloud environment. e.g. `git clone repo` then `make all` on a brand new machine. Works out of the box.
+- `55:00` AWS Cloud9 is a web based IDE. With automation/testing, you can onboard by simply cloning the repo and running `make all`.
+- `56:00` CodeBuild is the AWS equivalent of Github Actions. Can create a `buildspec.yml` to configure how the app is built on AWS.
+- `73:00` [GitHub Codespaces](https://github.com/features/codespaces) is Cloud Environment similar to Cloud9.
+- `75:00` Can use Jupyter Notebook (e.g. Google Colab) and save it into your repo. Can build a test suite around jupyter notebook.
