@@ -1,5 +1,7 @@
+[![Python application test with Github Actions](https://github.com/slyt/pytest-example/actions/workflows/testing-ci.yml/badge.svg)](https://github.com/slyt/pytest-example/actions/workflows/testing-ci.yml)
+
 # pytest-examples
-Examples of using pytest for learning purposes
+Examples of using pytest for learning purposes by following [Pytest: Environmnets Setup and Advanced Testing](https://www.coursera.org/videos/spark-hadoop-snowflake-data-engineering/UUI0G?authProvider=target&query=pytest&source=search)
 
 
 ## Setup
@@ -8,3 +10,19 @@ Examples of using pytest for learning purposes
 pyenv local 3.12.4
 make all
 ```
+
+## Notes
+- Makefile does install, test (pytest), format (black), lint (pylint)
+- Github actions automatically runs everything from the Makefile on push. See `.github/workflows/testing-ci.yml`.
+- [Timecode: 32:32] Ran into issues using old versions of actions/checkout and actions/setup-python that depend on old versions of Node.js. Had to update to the latest version to build properly. Actions are github repos, you can see the versions on the Release section, e.g. [actions/setup-python](https://github.com/actions/setup-python)
+
+Error:
+```
+build
+Process completed with exit code 2.
+build
+The following actions uses node12 which is deprecated and will be forced to run on node16: actions/checkout@v2, actions/setup-python@v1. For more info: https://github.blog/changelog/2023-06-13-github-actions-all-actions-will-run-on-node16-instead-of-node12-by-default/
+
+```
+
+- Switching to using `requirements.txt` instead of `pyproject.toml` and poetry so that Github Actiosn work. Will circle back around and learn how poetry works with github actions.
