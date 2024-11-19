@@ -3,7 +3,7 @@ POETRY_RUN = poetry run
 
 # Install dependencies
 install:
-	poetry install
+	pip install -r requirements.txt
 
 # Run tests with pytest
 test:
