@@ -8,6 +8,7 @@ install:
 # Run tests with pytest
 test:
 	python -m pytest -vv --cov=hello --cov=greeting tests
+	python -m pytest --nbval notebook.ipynb
 
 # Format code with black
 format:
