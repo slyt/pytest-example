@@ -7,7 +7,7 @@ install:
 
 # Run tests with pytest
 test:
-	python -m pytest -vv --cov=hello tests
+	python -m pytest -vv --cov=hello --cov=greeting tests
 
 # Format code with black
 format:

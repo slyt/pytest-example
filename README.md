@@ -29,3 +29,13 @@ The following actions uses node12 which is deprecated and will be forced to run 
 - `34:03` Add flag to pytest command in makefile so that coverage get's analyzed (see [pytest-cov usage](https://pypi.org/project/pytest-cov/#usage))
 - `39:20` Running matrix test with different python as described in [Github Actions docs](https://docs.github.com/en/actions/use-cases-and-examples/building-and-testing/building-and-testing-python#using-multiple-python-versions)
 - `43:26` Moved `test_hollo.py` to the `tests` directory, but then `make test` failed because I was calling pytest directly, need to call pytest with `python -m pytest tests` so that hello.py is added to the Python path. Alternatively, we could create `pytest.ini` or `pyproject.toml` and define `pythonpath = .` appropriately.
+- When using ipython, if you change the code from the imported module, you can't just re-import it. You must either restart the ipython session or force the re-import with:
+```python
+import importlib
+import greeting  # Ensure the module is imported first
+importlib.reload(greeting)
+from greeting import my_name
+```
+
+This is because python only imports once per session and subsequent imports are ignored in order to improve performance and preventing conflicts from loading modules multiple times.
+
