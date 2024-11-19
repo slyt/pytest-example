@@ -44,3 +44,4 @@ This is because python only imports once per session and subsequent imports are 
 - `56:00` CodeBuild is the AWS equivalent of Github Actions. Can create a `buildspec.yml` to configure how the app is built on AWS.
 - `73:00` [GitHub Codespaces](https://github.com/features/codespaces) is Cloud Environment similar to Cloud9.
 - `75:00` Can use Jupyter Notebook (e.g. Google Colab) and save it into your repo. Can build a test suite around jupyter notebook.
+- You must evaluate the cells and have the execute successfully before saving and checking in the notebook in order for nbval to successfully execute the cells.
