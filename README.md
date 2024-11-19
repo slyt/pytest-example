@@ -26,3 +26,4 @@ The following actions uses node12 which is deprecated and will be forced to run 
 ```
 
 - Switching to using `requirements.txt` instead of `pyproject.toml` and poetry so that Github Actiosn work. Will circle back around and learn how poetry works with github actions.
+- Add flag to pytest command in makefile so that coverage get's analyzed (see [pytest-cov usage](https://pypi.org/project/pytest-cov/#usage))
