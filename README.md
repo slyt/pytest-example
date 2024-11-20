@@ -47,3 +47,4 @@ This is because python only imports once per session and subsequent imports are 
 - You must evaluate the cells and have the execute successfully before saving and checking in the notebook in order for nbval to successfully execute the cells.
 - `89:00` Can import pdf to debug: `import pdb; pdb.set_trace()` on any line then execute the script to enter the debugger. Type `n` to go to next line. `ipdb` is a fancier version of `pdb` based on ipython.
 - `95:00`: Can run pytest with `--pdb` flag so that a debugger starts where a test fails so that you can inspect state of the program.
+- `102:00`: Can run a single test in a moduel with `python -m pytest tests/test_greeting.py::test_my_name_3` syntax.

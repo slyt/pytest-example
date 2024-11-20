@@ -13,6 +13,9 @@ test:
 debug:
 	python -m pytest -vv --pdb --cov=hello --cov=greeting tests # Debugger is invoked when test fails
 
+one-test:
+	python -m pytest tests/test_greeting.py::test_my_name_3
+
 # Format code with black
 format:
 	black *.py
