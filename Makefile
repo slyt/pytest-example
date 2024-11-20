@@ -10,6 +10,9 @@ test:
 	python -m pytest -vv --cov=hello --cov=greeting tests
 	python -m pytest --nbval notebook.ipynb
 
+debug:
+	python -m pytest -vv --pdb --cov=hello --cov=greeting tests # Debugger is invoked when test fails
+
 # Format code with black
 format:
 	black *.py
